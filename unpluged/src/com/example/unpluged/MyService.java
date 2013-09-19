@@ -14,17 +14,15 @@ public class MyService extends Service {
    public IBinder onBind(Intent arg0) {
       return null;
    }
+   
 
    @Override
    public int onStartCommand(Intent intent, int flags, int startId) {
      
-	   
 	   myPhoneCallReceiver = new PhoneCallReceiver();
 		IntentFilter myFilter = new IntentFilter();
 
-		intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-		startActivity(intent);
-
+		
 		myFilter.addAction("android.intent.action.HEADSET_PLUG");
 		myFilter.addAction("android.intent.action.PHONE_STATE");
 		myFilter.addAction("android.intent.action.BOOT_COMPLETED");

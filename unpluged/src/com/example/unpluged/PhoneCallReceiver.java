@@ -3,13 +3,12 @@ package com.example.unpluged;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.example.unpluged.utils.SoundUtils;
 
 /**
  * Sample of BroadcastReceiver, every time the phone get a phone this Receiver
@@ -47,18 +46,13 @@ public class PhoneCallReceiver extends BroadcastReceiver {
 				int state = intent.getIntExtra("state", -1);
 				switch (state) {
 				case 0:
-					Uri notification = RingtoneManager
-							.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-					Ringtone r = RingtoneManager.getRingtone(context,
-							notification);
-					r.play();
-
+					SoundUtils.playSound(context, SoundUtils.DEFAULT);
 					break;
 				case 1:
+					//SoundUtils.stop();
 					Toast toast = Toast.makeText(context,
 							"Received intent: headsetPlugged", 10);
 					toast.show();
-
 					break;
 				default:
 					toast = Toast.makeText(context,

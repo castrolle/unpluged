@@ -1,0 +1,8 @@
+///Servicios
+http://dj-android.blogspot.com/2013/04/android-notifications-2.html
+http://android-er.blogspot.com/2011/04/start-service-to-send-notification.html
+http://www.imaginaformacion.com/tutoriales/implementa-un-service-boot-en-tu-aplicacion-de-android/
+
+
+///Sonidos
+http://capycoding.blogspot.com/2012/10/play-audio-file-mp3-from-asset-folder.html
