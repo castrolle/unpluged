@@ -49,7 +49,7 @@ public class PhoneCallReceiver extends BroadcastReceiver {
 					SoundUtils.playSound(context, SoundUtils.DEFAULT);
 					break;
 				case 1:
-					//SoundUtils.stop();
+					SoundUtils.stop();
 					Toast toast = Toast.makeText(context,
 							"Received intent: headsetPlugged", 10);
 					toast.show();
