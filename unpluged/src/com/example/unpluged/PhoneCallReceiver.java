@@ -38,10 +38,6 @@ public class PhoneCallReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		Bundle intentExtras = intent.getExtras();
 		
-		if(mp == null){
-			mp = new MediaPlayer();
-		}
-
 		// is intent a REBOOT?
 		if (intent.getAction().equals(Intent.ACTION_REBOOT)) {
 			Log.d("PELLODEBUG", "BR> Received intent: system rebooted");
@@ -51,6 +47,11 @@ public class PhoneCallReceiver extends BroadcastReceiver {
 		if (intent.getAction().equals("android.intent.action.HEADSET_PLUG")) {
 
 			if (intent.getAction().equals(Intent.ACTION_HEADSET_PLUG)) {
+				
+				if(mp == null){
+					mp = new MediaPlayer();
+				}
+				
 				int state = intent.getIntExtra("state", -1);
 				switch (state) {
 				case 0:
@@ -58,7 +59,8 @@ public class PhoneCallReceiver extends BroadcastReceiver {
 					VibrateUtils.start(context);
 					break;
 				case 1:
-					//SoundUtils.stop(mp);
+					SoundUtils.stop(mp,context);
+					mp = null;
 					Toast toast = Toast.makeText(context,
 							"Received intent: headsetPlugged", 10);
 					toast.show();

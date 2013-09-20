@@ -38,4 +38,12 @@
         android:onClick="startService"
         android:text="@string/start_service" />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_centerVertical="true"
+        android:text="@string/stop_alarm" />
+
 </RelativeLayout>
