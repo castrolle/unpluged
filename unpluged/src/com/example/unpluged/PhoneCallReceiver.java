@@ -3,12 +3,14 @@ package com.example.unpluged;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.example.unpluged.utils.SoundUtils;
+import com.example.unpluged.utils.VibrateUtils;
 
 /**
  * Sample of BroadcastReceiver, every time the phone get a phone this Receiver
@@ -19,6 +21,8 @@ import com.example.unpluged.utils.SoundUtils;
  * @greetz Remírez
  */
 public class PhoneCallReceiver extends BroadcastReceiver {
+	
+	private MediaPlayer mp;
 
 	/**
 	 * default constructor
@@ -33,6 +37,10 @@ public class PhoneCallReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Bundle intentExtras = intent.getExtras();
+		
+		if(mp == null){
+			mp = new MediaPlayer();
+		}
 
 		// is intent a REBOOT?
 		if (intent.getAction().equals(Intent.ACTION_REBOOT)) {
@@ -46,10 +54,11 @@ public class PhoneCallReceiver extends BroadcastReceiver {
 				int state = intent.getIntExtra("state", -1);
 				switch (state) {
 				case 0:
-					SoundUtils.playSound(context, SoundUtils.DEFAULT);
+					SoundUtils.playSound(mp,context, SoundUtils.DEFAULT);
+					VibrateUtils.start(context);
 					break;
 				case 1:
-					SoundUtils.stop();
+					//SoundUtils.stop(mp);
 					Toast toast = Toast.makeText(context,
 							"Received intent: headsetPlugged", 10);
 					toast.show();
