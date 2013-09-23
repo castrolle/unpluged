@@ -37,33 +37,13 @@
         android:onClick="stopSound"
         android:text="@string/stop_alarm" />
 
-       <SeekBar
-           android:id="@+id/seekBar3"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_alignLeft="@+id/seekBar4"
-           android:layout_below="@+id/button1"
-           android:layout_marginTop="14dp" />
+       
 
        <SeekBar
            android:id="@+id/seekBar1"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_alignLeft="@+id/button1"
-           android:layout_below="@+id/seekBar3" />
-
-       <SeekBar
-           android:id="@+id/seekBar2"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_alignLeft="@+id/seekBar1"
-           android:layout_below="@+id/seekBar1" />
-
-       <SeekBar
-           android:id="@+id/seekBar4"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_alignLeft="@+id/seekBar2"
-           android:layout_below="@+id/seekBar2" />
+           android:layout_below="@+id/button1" />
       
 </RelativeLayout>
