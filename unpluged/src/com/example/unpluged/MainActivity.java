@@ -28,17 +28,14 @@ public class MainActivity extends Activity implements OnSeekBarChangeListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		//setContentView(R.layout.activity_main);
+		setContentView(R.layout.dashboard_layout);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-
 		this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
-//		this.setVolumeControlStream(AudioManager.STREAM_RING);
-//		this.setVolumeControlStream(AudioManager.STREAM_ALARM);
-//		this.setVolumeControlStream(AudioManager.STREAM_NOTIFICATION);
 
 		initControls();
 		getMenuInflater().inflate(R.menu.main, menu);
