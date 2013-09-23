@@ -16,23 +16,14 @@
         android:layout_below="@+id/btnStartService"
         android:layout_marginTop="28dp"
         android:onClick="stopService"
+        android:visibility="invisible"
         android:text="@string/stop_service" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/hello_world" />
 
     <Button
         android:id="@+id/btnStartService"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:onClick="startService"
@@ -42,8 +33,37 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
         android:layout_centerVertical="true"
+        android:onClick="stopSound"
         android:text="@string/stop_alarm" />
 
+       <SeekBar
+           android:id="@+id/seekBar3"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignLeft="@+id/seekBar4"
+           android:layout_below="@+id/button1"
+           android:layout_marginTop="14dp" />
+
+       <SeekBar
+           android:id="@+id/seekBar1"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignLeft="@+id/button1"
+           android:layout_below="@+id/seekBar3" />
+
+       <SeekBar
+           android:id="@+id/seekBar2"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignLeft="@+id/seekBar1"
+           android:layout_below="@+id/seekBar1" />
+
+       <SeekBar
+           android:id="@+id/seekBar4"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignLeft="@+id/seekBar2"
+           android:layout_below="@+id/seekBar2" />
+      
 </RelativeLayout>

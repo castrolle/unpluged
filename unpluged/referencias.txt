@@ -6,3 +6,16 @@ http://www.imaginaformacion.com/tutoriales/implementa-un-service-boot-en-tu-apli
 
 ///Sonidos
 http://capycoding.blogspot.com/2012/10/play-audio-file-mp3-from-asset-folder.html
+
+///Volumen del sistema
+http://stackoverflow.com/questions/10416974/android-audiomanager-setmode-permission-denial
+http://stackoverflow.com/questions/4178989/change-media-volume-in-android
+http://stackoverflow.com/questions/9164347/setting-the-android-system-volume
+http://stackoverflow.com/questions/12266502/android-mediaplayer-stop-and-play
+
+
+///seeker
+http://android.programmerguru.com/android-seekbar-example/
+
+///parameters
+http://stackoverflow.com/questions/2405120/how-to-start-an-intent-by-passing-some-parameters-to-it

@@ -14,7 +14,7 @@ public class VibrateUtils {
 		// Now we set the vibrate member variable of our Notification
 		// After a 100ms delay, vibrate for 200ms then pause for another
 		//100ms and then vibrate for 500ms
-		n.vibrate = new long[]{3000, 200, 300, 500}; 
+		n.vibrate = new long[]{100, 200, 300, 5000}; 
 		nManager.notify(0, n);
 		
 	}

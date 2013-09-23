@@ -22,7 +22,6 @@ import com.example.unpluged.utils.VibrateUtils;
  */
 public class PhoneCallReceiver extends BroadcastReceiver {
 	
-	private MediaPlayer mp;
 
 	/**
 	 * default constructor
@@ -42,25 +41,20 @@ public class PhoneCallReceiver extends BroadcastReceiver {
 		if (intent.getAction().equals(Intent.ACTION_REBOOT)) {
 			Log.d("PELLODEBUG", "BR> Received intent: system rebooted");
 		}
-
+		
 		// or maybe a headphone plug/unplug?
 		if (intent.getAction().equals("android.intent.action.HEADSET_PLUG")) {
 
 			if (intent.getAction().equals(Intent.ACTION_HEADSET_PLUG)) {
 				
-				if(mp == null){
-					mp = new MediaPlayer();
-				}
-				
 				int state = intent.getIntExtra("state", -1);
 				switch (state) {
 				case 0:
-					SoundUtils.playSound(mp,context, SoundUtils.DEFAULT);
+					SoundUtils.playSound(context, SoundUtils.DEFAULT);
 					VibrateUtils.start(context);
 					break;
 				case 1:
-					SoundUtils.stop(mp,context);
-					mp = null;
+					SoundUtils.stop(context);
 					Toast toast = Toast.makeText(context,
 							"Received intent: headsetPlugged", 10);
 					toast.show();
@@ -107,5 +101,6 @@ public class PhoneCallReceiver extends BroadcastReceiver {
 		Log.d("PELLODEBUG", "BR> saving info: " + info);
 		return true;
 	}
-
+	
+	
 }
