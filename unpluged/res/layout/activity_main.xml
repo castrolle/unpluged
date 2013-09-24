@@ -9,41 +9,98 @@
     tools:context=".MainActivity" >
 
     <Button
-        android:id="@+id/btnStopService"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnStartService"
-        android:layout_below="@+id/btnStartService"
-        android:layout_marginTop="28dp"
-        android:onClick="stopService"
-        android:visibility="invisible"
-        android:text="@string/stop_service" />
-
-
-    <Button
         android:id="@+id/btnStartService"
+        style="@style/DashboardButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="31dp"
+        android:drawableTop="@drawable/btn_newsfeed"
         android:onClick="startService"
         android:text="@string/start_service" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnStopService"
+        style="@style/DashboardButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnStartService"
+        android:layout_alignBottom="@+id/btnStartService"
+        android:layout_alignLeft="@+id/btnStartService"
+        android:drawableTop="@drawable/btn_messages"
+        android:onClick="stopService"
+        android:visibility="invisible"
+        android:text="@string/stop_service" />
+
+    <Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:onClick="stopSound"
-        android:text="@string/stop_alarm" />
+        android:layout_below="@+id/btnStartService"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="@string/more" />
 
-       
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/seekBar1"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="16dp"
+        android:text="@string/type_alarm" />
 
-       <SeekBar
-           android:id="@+id/seekBar1"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_alignLeft="@+id/button1"
-           android:layout_below="@+id/button1" />
-      
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_toRightOf="@+id/button2"
+        android:text="@string/alarm_tone_selected"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView4"
+        android:layout_alignLeft="@+id/textView4"
+        android:text="@string/vibrate" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toggleButton1"
+        android:layout_marginTop="25dp"
+        android:layout_toLeftOf="@+id/button2"
+        android:text="@string/alarm_tone" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView5"
+        android:layout_below="@+id/seekBar1"
+        android:text="@string/vibrate_on_off" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnStartService"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/toggleButton1"
+        android:layout_below="@+id/textView2"
+        android:layout_marginRight="14dp"
+        android:text="@string/type_alarm_selected"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
 </RelativeLayout>
