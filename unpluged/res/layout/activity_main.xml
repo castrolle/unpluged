@@ -1,18 +1,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/home_root"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    	<!-- Include Action Bar -->
-    	<include layout="@layout/actionbar_layout"/>
-    	
-    	<!--  Include Fragmented dashboard -->	
-		
-		<!--  Include Footer -->
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 
-		<include
-		    layout="@layout/fragment_layout" />
+    <!-- Include Action Bar -->
 
-		<include layout="@layout/footer_layout" />
-    	    
+    <include layout="@layout/actionbar_layout" />
+
+    <!-- Include Fragmented dashboard -->
+
+
+    <!-- Include Footer -->
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.74"
+        layout="@layout/list" />
+
+    <include layout="@layout/footer_layout" />
+
 </LinearLayout>
