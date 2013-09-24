@@ -1,5 +1,7 @@
 package com.example.unpluged;
 
+import com.example.unpluged.utils.SoundUtils;
+
 import android.app.Service;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -43,6 +45,7 @@ public class MyService extends Service {
 	public void onDestroy() {
 
 		if (null != myPhoneCallReceiver) {
+			SoundUtils.stop(this);
 			this.unregisterReceiver(myPhoneCallReceiver);
 		} else {
 			Log.d("PELLODEBUG", "MainActivity> is null already");

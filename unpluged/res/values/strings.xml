@@ -18,5 +18,6 @@
     <string name="alarm_tone">Tono de alarma</string>
     <string name="alarm_tone_selected">Kings of leon</string>
     <string name="vibrate_on_off">Off</string>
+    <string name="footer">my.com</string>
 
 </resources>
