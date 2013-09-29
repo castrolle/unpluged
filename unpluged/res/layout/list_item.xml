@@ -13,6 +13,12 @@
         android:layout_height="fill_parent"
         android:layout_marginRight="6dip"
         android:src="@drawable/ic_launcher" />
+    
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vibrate_on_off" />
 
     <LinearLayout
         android:layout_width="0dip"

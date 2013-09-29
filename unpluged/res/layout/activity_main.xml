@@ -10,13 +10,16 @@
 
     <!-- Include Fragmented dashboard -->
 
+    <include
+        android:layout_width="125dp"
+        layout="@layout/fragment_layout" />
+    
+     <include layout="@layout/volume_item" />
 
     <!-- Include Footer -->
 
     <include
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="0.74"
+        android:layout_height="197dp"
         layout="@layout/list" />
 
     <include layout="@layout/footer_layout" />

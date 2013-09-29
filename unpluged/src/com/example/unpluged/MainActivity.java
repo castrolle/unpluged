@@ -7,23 +7,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
-import android.widget.TextView;
 
 import com.example.unpluged.model.AlarmType;
 import com.example.unpluged.model.Item;
 import com.example.unpluged.model.Tone;
 import com.example.unpluged.model.Vibration;
-import com.example.unpluged.model.Volume;
 import com.example.unpluged.utils.SoundUtils;
 
 /**
@@ -37,41 +31,31 @@ public class MainActivity extends Activity implements OnSeekBarChangeListener {
 
 	private SeekBar mediaVlmSeekBar = null;
 	private AudioManager audioManager = null;
-	
-	
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
-		
-		 ArrayList<Item> items = new ArrayList<Item>();
-	        
-		 items.add(new AlarmType("Tipo de alarma"));
-		 items.add(new Tone("Tono"));
-		 items.add(new Vibration("Vibración"));
-		 items.add(new Volume("Vlumen"));
-	        
-	        ListView listView = (ListView) findViewById(R.id.list);
-	        listView.setAdapter(new ItemsAdapter(this, android.R.layout.simple_list_item_1, items));
-	}
-	
-	
-	
-	
-	
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
+		ArrayList<Item> items = new ArrayList<Item>();
+
+		items.add(new AlarmType("Tipo de alarma"));
+		items.add(new Tone("Tono"));
+		items.add(new Vibration("Vibración"));
+
+		ListView listView = (ListView) findViewById(R.id.list);
+		listView.setAdapter(new ItemsAdapter(this,
+				android.R.layout.simple_list_item_1, items));
+
+		this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
+
 		initControls();
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
 	}
+
 
 	private void initControls() {
 		// Return the handle to a system-level service - 'AUDIO'.
