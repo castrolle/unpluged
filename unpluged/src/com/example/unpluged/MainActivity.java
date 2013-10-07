@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -30,7 +31,11 @@ import com.example.unpluged.utils.SoundUtils;
 public class MainActivity extends Activity implements OnSeekBarChangeListener {
 
 	private SeekBar mediaVlmSeekBar = null;
+	private SeekBar ringerVlmSeekBar = null;
+	private SeekBar alarmVlmSeekBar = null;
+	private SeekBar notifyVlmSeekBar = null;
 	private AudioManager audioManager = null;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +43,15 @@ public class MainActivity extends Activity implements OnSeekBarChangeListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 
-		// Inflate the menu; this adds items to the action bar if it is present.
-		this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
+		
+		this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
+		this.setVolumeControlStream(AudioManager.STREAM_RING);
+		this.setVolumeControlStream(AudioManager.STREAM_ALARM);
+		this.setVolumeControlStream(AudioManager.STREAM_NOTIFICATION);
+
+		initControls();
+		
 		ArrayList<Item> items = new ArrayList<Item>();
 
 		items.add(new AlarmType("Tipo de alarma"));
@@ -50,49 +61,52 @@ public class MainActivity extends Activity implements OnSeekBarChangeListener {
 		ListView listView = (ListView) findViewById(R.id.list);
 		listView.setAdapter(new ItemsAdapter(this,
 				android.R.layout.simple_list_item_1, items));
+		
 
-		this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
-
-		initControls();
 	}
+	
 
 
 	private void initControls() {
-		// Return the handle to a system-level service - 'AUDIO'.
+		//Return the handle to a system-level service - 'AUDIO'.
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-
-		// Find the seekbar 1
+		 
+		//Find the seekbar 1
 		mediaVlmSeekBar = (SeekBar) findViewById(R.id.seekBar1);
-		// Set the max range(Volume in this case) of seekbar
-		// for Media player volume
+		//Set the max range(Volume in this case) of seekbar
+		//for Media player volume
 		mediaVlmSeekBar.setMax(audioManager
-				.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
-		// Set the progress with current Media Volume
+		        .getStreamMaxVolume(AudioManager.STREAM_MUSIC));
+		//Set the progress with current Media Volume
 		mediaVlmSeekBar.setProgress(audioManager
-				.getStreamVolume(AudioManager.STREAM_MUSIC));
-
+		        .getStreamVolume(AudioManager.STREAM_MUSIC));
+		 
+		
+		 
 		try {
-			// Listener to receive changes to the SeekBar1's progress level
-			mediaVlmSeekBar
-					.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-						public void onStopTrackingTouch(SeekBar arg0) {
-						}
-
-						public void onStartTrackingTouch(SeekBar arg0) {
-						}
-
-						// When progress level of seekbar1 is changed
-						public void onProgressChanged(SeekBar arg0,
-								int progress, boolean arg2) {
-							audioManager.setStreamVolume(
-									AudioManager.STREAM_MUSIC, progress, 0);
-						}
-					});
-
+		    //Listener to receive changes to the SeekBar1's progress level
+		    mediaVlmSeekBar
+		        .setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+		    public void onStopTrackingTouch(SeekBar arg0) {
+		        }
+		 
+		    public void onStartTrackingTouch(SeekBar arg0) {
+		        }
+		    //When progress level of seekbar1 is changed
+		    public void onProgressChanged(SeekBar arg0,
+		        int progress, boolean arg2) {
+		    audioManager.setStreamVolume(
+		        AudioManager.STREAM_MUSIC, progress, 0);
+		    }
+		 });
+		 
+		 
+		 
+		  
 		} catch (Exception e) {
-			e.printStackTrace();
+		    e.printStackTrace();
 		}
-	}
+		}
 
 	@Override
 	public boolean moveTaskToBack(boolean nonRoot) {

@@ -31,11 +31,6 @@
             android:text="@string/stop_service" 
             >
         </Button>
-         <SeekBar
-        android:id="@+id/seekBar1"
-        android:layout_width="279dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp" />
         
         
     </LinearLayout>

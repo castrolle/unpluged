@@ -29,6 +29,8 @@ public class MyService extends Service {
 			myFilter.addAction("android.intent.action.PHONE_STATE");
 			myFilter.addAction("android.intent.action.BOOT_COMPLETED");
 			myFilter.addAction("android.intent.action.QUICKBOOT_POWERON");
+			
+			SoundUtils.playSound(this, SoundUtils.DEFAULT);
 
 			// We register the receiver...
 			// and off we go...
