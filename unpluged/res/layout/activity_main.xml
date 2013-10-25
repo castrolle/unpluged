@@ -14,7 +14,21 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnFlash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/flash"
+            android:button="@null" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="190dp"
         android:gravity="center"
         android:orientation="vertical" >
 
@@ -27,6 +41,41 @@
             android:onClick="toggleService"
             android:textOff=""
             android:textOn="" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnVibrator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vibrator"
+            android:button="@null" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnConfig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/config"
+            android:button="@null" />
+
+        <Button
+            android:id="@+id/btnSong"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/song"
+            android:button="@null"
+            android:paddingLeft="50dp" />
     </LinearLayout>
 
 </LinearLayout>
