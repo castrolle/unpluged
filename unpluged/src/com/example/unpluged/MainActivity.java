@@ -48,7 +48,7 @@ public class MainActivity extends Activity implements OnSeekBarChangeListener {
 		 * ArrayList<Item> items = new ArrayList<Item>();
 		 * 
 		 * items.add(new AlarmType("Tipo de alarma")); items.add(new
-		 * Tone("Tono")); items.add(new Vibration("Vibración"));
+		 * Tone("Tono")); items.add(new Vibration("Vibraciï¿½n"));
 		 * 
 		 * ListView listView = (ListView) findViewById(R.id.list);
 		 * listView.setAdapter(new ItemsAdapter(this,
@@ -115,10 +115,10 @@ public class MainActivity extends Activity implements OnSeekBarChangeListener {
 
 	// Method to start the service
 	public void startService(View view) {
-		Button btnStopService = (Button) findViewById(R.id.btnStopService);
+		Button btnStopService = (Button) findViewById(R.id.btnToggle);
 		btnStopService.setVisibility(Button.VISIBLE);
 
-		Button btnStartService = (Button) findViewById(R.id.btnStartService);
+		Button btnStartService = (Button) findViewById(R.id.btnToggle);
 		btnStartService.setVisibility(Button.INVISIBLE);
 
 		startService(new Intent(this, MyService.class));
@@ -126,10 +126,10 @@ public class MainActivity extends Activity implements OnSeekBarChangeListener {
 
 	// Method to stop the service
 	public void stopService(View view) {
-		Button btnStopService = (Button) findViewById(R.id.btnStopService);
+		Button btnStopService = (Button) findViewById(R.id.btnToggle);
 		btnStopService.setVisibility(Button.INVISIBLE);
 
-		Button btnStartService = (Button) findViewById(R.id.btnStartService);
+		Button btnStartService = (Button) findViewById(R.id.btnToggle);
 		btnStartService.setVisibility(Button.VISIBLE);
 
 		stopService(new Intent(this, MyService.class));
